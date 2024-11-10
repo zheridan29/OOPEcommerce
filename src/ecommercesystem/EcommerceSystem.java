@@ -4,6 +4,8 @@
  */
 package ecommercesystem;
 
+import java.util.Optional;
+
 /**
  * 
  * @author zheridan29
@@ -33,7 +35,7 @@ public class EcommerceSystem {
         System.out.println(cart.getTotalCost());
         
         Customer c1 = new Customer("Ace", 01);
-        Order or1 = c1.checkout(cart);
+        Optional<Order> or1 = c1.checkout(cart);
         System.out.println(or1);
         
     }

@@ -4,6 +4,8 @@
  */
 package ecommercesystem;
 
+import java.util.Optional;
+
 /**
  *
  * @author zheridan29
@@ -18,11 +20,14 @@ public class Customer {
         this.ccard = new CreditCard(ccnumber);//composition
     }
 
-    public Order checkout(ShoppingCart cart) {
-        Payment p = ccard.mkPayment(cart.getTotalCost());
-        return new Order(this, cart, p);
+    public Optional<Order> checkout(ShoppingCart cart) {
+        Optional<Payment> p = ccard.mkPayment(cart.getTotalCost());
+//        return p.isPresent() ? Optional.of(new Order(this, cart, p.get())) : Optional.empty();
+        //Lambda expression
+        return p.map(value -> new Order(this, cart, value));
+        
     }
-
+    
     public CreditCard getCcard() {
         return ccard;
     }

@@ -4,6 +4,7 @@
  */
 package ecommercesystem;
 
+import java.util.Optional;
 import java.util.UUID;
 
 /**
@@ -18,12 +19,12 @@ public class CreditCard {
         this.ccnumber = ccnumber;
     }
 
-    public Payment mkPayment(int value) {
+    public Optional<Payment> mkPayment(int value) {
 
         if (Math.random() > 0.3) {
-            return new Payment(this, UUID.randomUUID(), value);
+            return Optional.of(new Payment(this, UUID.randomUUID(), value));
         } else {
-            return null;
+            return Optional.empty();
         }
 
     }
