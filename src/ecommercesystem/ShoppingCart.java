@@ -12,7 +12,7 @@ import java.util.List;
  * @author zheridan29
  */
 public class ShoppingCart {
-
+//change to LineItem
     private List<Product> productList = new ArrayList();
     private final double cartID;
 
