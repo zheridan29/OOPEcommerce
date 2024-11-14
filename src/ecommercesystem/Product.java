@@ -12,7 +12,13 @@ public class Product {
 
     private ProductType type;
     private final String productName;
-    private int price;
+//  Poor design exposing without getter method
+//  private int price;
+    int price;
+    
+    //after LineItem
+    int discount;
+    //then the code in the LineItem must change in order to add discount bec... gp?
 
     public Product(String productName, int price, ProductType type) {
         this.productName = productName;
@@ -20,10 +26,10 @@ public class Product {
         this.type = type;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
+//    public int getPrice() {
+//        return price;
+//    }
+//goto Line Item
     @Override
     public String toString() {
         return "Product{" + "type=" + type + ", productName=" + productName + ", price=" + price + '}';
