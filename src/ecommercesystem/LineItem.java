@@ -38,7 +38,8 @@ int price = product.price * ((100 - product.discount)/100);
 return price * quantity;
 
 //NEXT - if instead we encapsulate calculating a price and the getPrice method
-//
+//and placed the computation of price inside the Product class itself
+
 
     }
 
