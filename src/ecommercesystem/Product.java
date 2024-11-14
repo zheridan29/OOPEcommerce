@@ -14,7 +14,7 @@ public class Product {
     private final String productName;
 //  Poor design exposing without getter method
 //  private int price;
-    int price;
+    private int price;
     
     //after LineItem
     int discount;
@@ -26,9 +26,9 @@ public class Product {
         this.type = type;
     }
 
-//    public int getPrice() {
-//        return price;
-//    }
+    public int getPrice() {
+        return (int) price * ((100 - discount)/100);
+    }
 //goto Line Item
     @Override
     public String toString() {

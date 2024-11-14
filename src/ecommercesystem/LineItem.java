@@ -33,9 +33,9 @@ public class LineItem {
 //change after Product putting discount
 
 // add the computation of discount here
-int price = product.price * ((100 - product.discount)/100);
+//int price = product.price * ((100 - product.discount)/100);
 //Queation? what will happen to other class that uses the price var ? (it will all change)
-return price * quantity;
+return product.getPrice() * quantity;
 
 //NEXT - if instead we encapsulate calculating a price and the getPrice method
 //and placed the computation of price inside the Product class itself
